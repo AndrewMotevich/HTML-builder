@@ -1,5 +1,4 @@
 const fs = require('fs');
-const tty = require('tty');
 const path = require('path');
 const { stdin, stdout } = process;
 const text = path.join(__dirname);
@@ -13,10 +12,6 @@ stdin.on('data', data => {
     if (dataToString.trim() === "exit") {
         process.exit();
     } else output.write(dataToString);
-});
-
-process.on('SIGINT', () => {
-    process.exit();
 });
 
 process.on('exit', code => {
