@@ -12,7 +12,7 @@ function cb(err, files) {
             let filePath = path.join(__dirname, 'secret-folder', `${file.name}`)
             if (file.isFile()) {
                 stat(filePath, (err, stats) => {
-                    stdout.write(`${fileName.slice(0, file.name.indexOf('.'))} - ${path.extname(`${fileName}`).toString().slice(1)} - ${stats.size}\n`)
+                    stdout.write(`${fileName.slice(0, file.name.indexOf('.'))} - ${path.extname(`${fileName}`).toString().slice(1)} - ${stats.size}b\n`)
                 });
             }
         }
