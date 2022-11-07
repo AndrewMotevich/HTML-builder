@@ -18,3 +18,8 @@ process.on('exit', code => {
     if (code === 0){
     stdout.write('Everything is ok. Well done.');}
 });
+
+process.on('SIGINT', function() {
+    console.log("1Caught interrupt signal <CTRL+C>\nGoodbye!");
+    process.exit();
+});
